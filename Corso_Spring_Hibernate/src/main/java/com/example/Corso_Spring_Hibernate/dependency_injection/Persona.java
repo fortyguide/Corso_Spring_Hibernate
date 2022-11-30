@@ -1,4 +1,4 @@
-package dependency_injection;
+package com.example.Corso_Spring_Hibernate.dependency_injection;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -9,8 +9,8 @@ import org.springframework.stereotype.Component;
  */
 @Component
 public class Persona {
-    String nome;
-    String cognome;
+    public String nome;
+    public String cognome;
 
     @Autowired
     Indirizzo indirizzo;
