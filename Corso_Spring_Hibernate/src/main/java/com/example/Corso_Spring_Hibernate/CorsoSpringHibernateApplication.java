@@ -6,12 +6,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @SpringBootApplication
 @Controller
 @RequestMapping("/")
+@ComponentScan("com.example.Corso_Spring_Hibernate.prova")
 public class CorsoSpringHibernateApplication {
 
 	/* L'annotation @Autowired va sopra la dichiarazione
