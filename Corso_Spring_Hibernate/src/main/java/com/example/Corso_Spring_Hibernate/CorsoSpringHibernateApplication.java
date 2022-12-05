@@ -6,25 +6,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @SpringBootApplication
 @Controller
 @RequestMapping("/")
-@ComponentScan("com.example.Corso_Spring_Hibernate.prova")
 public class CorsoSpringHibernateApplication {
-
-	/* L'annotation @Autowired va sopra la dichiarazione
-	* dell'istanza di una classe annotata precedentemente
-	* con l'annotation @Component (vale anche per classi
-	* annotate con @Controller(@RestController), @Service,
-	* o @Repository). In questo modo non abbiamo bisogno
-	* di inizializzare l'istanza con new,
-	* dato che lo fa già Spring dietro le quinte */
-	@Autowired
-	Persona p;
 
 	/*In questo caso, invece, l'annotation @Autowired sta
 	* sopra la dichiarazione dell'istanza di una classe
