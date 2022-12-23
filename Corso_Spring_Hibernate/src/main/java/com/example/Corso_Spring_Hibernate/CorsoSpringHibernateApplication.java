@@ -1,6 +1,6 @@
 package com.example.Corso_Spring_Hibernate;
 
-import com.example.Corso_Spring_Hibernate.dependency_injection.Persona;
+import com.example.Corso_Spring_Hibernate.dependency_injection.Persona1;
 import com.example.Corso_Spring_Hibernate.dependency_injection.Veicolo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
