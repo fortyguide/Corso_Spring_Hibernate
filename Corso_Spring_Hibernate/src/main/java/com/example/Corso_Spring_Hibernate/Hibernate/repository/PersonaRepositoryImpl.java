@@ -1,5 +1,6 @@
 package com.example.Corso_Spring_Hibernate.Hibernate.repository;
 
+import com.example.Corso_Spring_Hibernate.Hibernate.dto.PersonaDto;
 import com.example.Corso_Spring_Hibernate.Hibernate.entity.Persona;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
@@ -27,9 +28,10 @@ public class PersonaRepositoryImpl implements PersonaRepository{
 
     @Override
     @Transactional
-    public Persona insertPersona(Persona persona) {
-        entityManager.persist(persona);
-        return persona;
+    public Persona insertPersona(PersonaDto persona) {
+        Persona entity = new Persona(persona);
+        entityManager.persist(entity);
+        return entity;
     }
 
     @Override

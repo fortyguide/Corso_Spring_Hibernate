@@ -1,5 +1,6 @@
 package com.example.Corso_Spring_Hibernate.Hibernate.controller;
 
+import com.example.Corso_Spring_Hibernate.Hibernate.dto.PersonaDto;
 import com.example.Corso_Spring_Hibernate.Hibernate.entity.Persona;
 import com.example.Corso_Spring_Hibernate.Hibernate.service.PersonaService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,9 +28,9 @@ public class PersonaController {
     }
 
     @PostMapping
-    public ResponseEntity<Persona> insertPersona(@RequestBody Persona persona){
-        Persona personaResult = personaService.insertPersona(persona);
-        return new ResponseEntity<Persona>(personaResult, HttpStatus.CREATED);
+    public ResponseEntity<PersonaDto> insertPersona(@RequestBody PersonaDto persona){
+        PersonaDto personaResult = personaService.insertPersona(persona);
+        return new ResponseEntity<PersonaDto>(personaResult, HttpStatus.CREATED);
     }
 
     @PutMapping

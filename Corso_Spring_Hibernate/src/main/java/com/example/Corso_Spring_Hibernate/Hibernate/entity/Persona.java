@@ -1,9 +1,13 @@
 package com.example.Corso_Spring_Hibernate.Hibernate.entity;
 
+import com.example.Corso_Spring_Hibernate.Hibernate.dto.PersonaDto;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import org.hibernate.annotations.CreationTimestamp;
+
+import java.sql.Timestamp;
 
 /**
  * Questa classe rappresenta la copia di una tabella su un database.
@@ -21,8 +25,18 @@ public class Persona {
     String nome;
     String cognome;
     Integer eta;
+    @CreationTimestamp
+    Timestamp dataInserimento;
 
     public Persona() {
+    }
+
+    /*Costruttore per convertire Entity in DTO*/
+    public Persona(PersonaDto dto) {
+        this.id = dto.getId();
+        this.nome = dto.getNome();
+        this.cognome = dto.getCognome();
+        this.eta = dto.getEta();
     }
 
     public Long getId() {
@@ -55,5 +69,13 @@ public class Persona {
 
     public void setEta(Integer eta) {
         this.eta = eta;
+    }
+
+    public Timestamp getDataInserimento() {
+        return dataInserimento;
+    }
+
+    public void setDataInserimento(Timestamp dataInserimento) {
+        this.dataInserimento = dataInserimento;
     }
 }

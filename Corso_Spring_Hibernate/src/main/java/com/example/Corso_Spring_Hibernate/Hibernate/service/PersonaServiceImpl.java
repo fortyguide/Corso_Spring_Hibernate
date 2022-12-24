@@ -1,5 +1,6 @@
 package com.example.Corso_Spring_Hibernate.Hibernate.service;
 
+import com.example.Corso_Spring_Hibernate.Hibernate.dto.PersonaDto;
 import com.example.Corso_Spring_Hibernate.Hibernate.entity.Persona;
 import com.example.Corso_Spring_Hibernate.Hibernate.repository.PersonaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,8 +20,10 @@ public class PersonaServiceImpl implements PersonaService{
     }
 
     @Override
-    public Persona insertPersona(Persona persona) {
-        return personaRepository.insertPersona(persona);
+    public PersonaDto insertPersona(PersonaDto persona) {
+        Persona entity = personaRepository.insertPersona(persona);
+        PersonaDto dto = new PersonaDto(entity);
+        return dto;
     }
 
     @Override
