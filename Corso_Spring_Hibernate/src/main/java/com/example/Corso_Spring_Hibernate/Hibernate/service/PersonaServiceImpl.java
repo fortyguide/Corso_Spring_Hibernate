@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class PersonaServiceImpl implements PersonaService{
@@ -15,8 +16,10 @@ public class PersonaServiceImpl implements PersonaService{
     PersonaRepository personaRepository;
 
     @Override
-    public List<Persona> getPersonaList() {
-        return personaRepository.getPersonaList();
+    public List<PersonaDto> getPersonaList() {
+        List<Persona> listaEntity = personaRepository.getPersonaList();
+        List<PersonaDto> listDto = listaEntity.stream().map(entity -> new PersonaDto(entity)).collect(Collectors.toList());
+        return listDto;
     }
 
     @Override
@@ -27,17 +30,23 @@ public class PersonaServiceImpl implements PersonaService{
     }
 
     @Override
-    public Persona updatePersona(Persona persona) {
-        return personaRepository.updatePersona(persona);
+    public PersonaDto updatePersona(PersonaDto persona) {
+        Persona entity = personaRepository.updatePersona(persona);
+        PersonaDto dto = new PersonaDto(entity);
+        return dto;
     }
 
     @Override
-    public Persona deletePersona(Persona persona) {
-        return personaRepository.deletePersona(persona);
+    public PersonaDto deletePersona(PersonaDto persona) {
+        Persona entity = personaRepository.deletePersona(persona);
+        PersonaDto dto = new PersonaDto(entity);
+        return dto;
     }
 
     @Override
-    public List<Persona> findPersonaByName(String nome) {
-        return personaRepository.findPersonaByName(nome);
+    public List<PersonaDto> findPersonaByName(String nome) {
+        List<Persona> listaEntity = personaRepository.findPersonaByName(nome);
+        List<PersonaDto> listDto = listaEntity.stream().map(entity -> new PersonaDto(entity)).collect(Collectors.toList());
+        return listDto;
     }
 }

@@ -36,17 +36,19 @@ public class PersonaRepositoryImpl implements PersonaRepository{
 
     @Override
     @Transactional
-    public Persona updatePersona(Persona persona) {
-        entityManager.merge(persona);
-        return persona;
+    public Persona updatePersona(PersonaDto persona) {
+        Persona entity = new Persona(persona);
+        entityManager.merge(entity);
+        return entity;
     }
 
     @Override
     @Transactional
-    public Persona deletePersona(Persona persona) {
+    public Persona deletePersona(PersonaDto persona) {
         Persona p = entityManager.find(Persona.class, persona.getId());
         entityManager.remove(p);
-        return p;
+        Persona entity = new Persona(persona);
+        return entity;
     }
 
     @Override

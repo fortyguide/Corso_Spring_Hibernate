@@ -7,9 +7,9 @@ import java.util.List;
 
 public interface PersonaService {
 
-    List<Persona> getPersonaList();
+    List<PersonaDto> getPersonaList();
     PersonaDto insertPersona(PersonaDto persona);
-    Persona updatePersona(Persona persona);
-    Persona deletePersona(Persona persona);
-    List<Persona> findPersonaByName(String nome);
+    PersonaDto updatePersona(PersonaDto persona);
+    PersonaDto deletePersona(PersonaDto persona);
+    List<PersonaDto> findPersonaByName(String nome);
 }

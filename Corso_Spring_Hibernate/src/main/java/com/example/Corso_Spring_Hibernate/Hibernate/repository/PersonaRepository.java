@@ -9,7 +9,7 @@ public interface PersonaRepository {
 
     List<Persona> getPersonaList();
     Persona insertPersona(PersonaDto persona);
-    Persona updatePersona(Persona persona);
-    Persona deletePersona(Persona persona);
+    Persona updatePersona(PersonaDto persona);
+    Persona deletePersona(PersonaDto persona);
     List<Persona> findPersonaByName(String nome);
 }

@@ -22,9 +22,9 @@ public class PersonaController {
     PersonaService personaService;
 
     @GetMapping
-    public ResponseEntity<List<Persona>> getPersonaList(){
-        List<Persona> listaPersone = personaService.getPersonaList();
-        return new ResponseEntity<List<Persona>>(listaPersone, HttpStatus.OK);
+    public ResponseEntity<List<PersonaDto>> getPersonaList(){
+        List<PersonaDto> listaPersone = personaService.getPersonaList();
+        return new ResponseEntity<List<PersonaDto>>(listaPersone, HttpStatus.OK);
     }
 
     @PostMapping
@@ -34,20 +34,20 @@ public class PersonaController {
     }
 
     @PutMapping
-    public ResponseEntity<Persona> updatePersona(@RequestBody Persona persona){
-        Persona personaResult = personaService.updatePersona(persona);
-        return new ResponseEntity<Persona>(personaResult, HttpStatus.OK);
+    public ResponseEntity<PersonaDto> updatePersona(@RequestBody PersonaDto persona){
+        PersonaDto personaResult = personaService.updatePersona(persona);
+        return new ResponseEntity<PersonaDto>(personaResult, HttpStatus.OK);
     }
 
     @DeleteMapping
-    public ResponseEntity<Persona> deletePersona(@RequestBody Persona persona){
-        Persona personaResult = personaService.deletePersona(persona);
-        return new ResponseEntity<Persona>(personaResult, HttpStatus.OK);
+    public ResponseEntity<PersonaDto> deletePersona(@RequestBody PersonaDto persona){
+        PersonaDto personaResult = personaService.deletePersona(persona);
+        return new ResponseEntity<PersonaDto>(personaResult, HttpStatus.OK);
     }
 
     @GetMapping("/{nome}")
-    public ResponseEntity<List<Persona>> getPersonaByName(@PathVariable String nome){
-        List<Persona> listaPersone = personaService.findPersonaByName(nome);
-        return new ResponseEntity<List<Persona>>(listaPersone, HttpStatus.OK);
+    public ResponseEntity<List<PersonaDto>> getPersonaByName(@PathVariable String nome){
+        List<PersonaDto> listaPersone = personaService.findPersonaByName(nome);
+        return new ResponseEntity<List<PersonaDto>>(listaPersone, HttpStatus.OK);
     }
 }
