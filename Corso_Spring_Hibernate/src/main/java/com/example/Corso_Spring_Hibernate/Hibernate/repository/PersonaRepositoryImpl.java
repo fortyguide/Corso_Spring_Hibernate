@@ -12,6 +12,7 @@ import java.util.List;
 
 /**
  * Classe che provvede ad interrogare il database
+ * e che converte DTO in Entity
  */
 
 @Repository

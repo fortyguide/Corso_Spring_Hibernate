@@ -1,7 +1,6 @@
 package com.example.Corso_Spring_Hibernate.Hibernate.controller;
 
 import com.example.Corso_Spring_Hibernate.Hibernate.dto.PersonaDto;
-import com.example.Corso_Spring_Hibernate.Hibernate.entity.Persona;
 import com.example.Corso_Spring_Hibernate.Hibernate.service.PersonaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

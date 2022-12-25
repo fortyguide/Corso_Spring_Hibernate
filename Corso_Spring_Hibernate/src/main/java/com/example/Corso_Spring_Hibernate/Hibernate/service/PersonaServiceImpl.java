@@ -9,6 +9,10 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.stream.Collectors;
 
+/**
+ * Classe che converte Entity in DTO
+ */
+
 @Service
 public class PersonaServiceImpl implements PersonaService{
 
