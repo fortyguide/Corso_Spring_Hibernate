@@ -1,8 +1,12 @@
 package com.example.Corso_Spring_Hibernate.Hibernate.dto;
 
+import com.example.Corso_Spring_Hibernate.Hibernate.entity.Corso;
 import com.example.Corso_Spring_Hibernate.Hibernate.entity.Persona;
 import com.example.Corso_Spring_Hibernate.Hibernate.entity.Tessera;
 import com.example.Corso_Spring_Hibernate.Hibernate.entity.Trainer;
+
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * Classe DTO che deriva dall'Entity Persona, ma che nasconde
@@ -17,6 +21,7 @@ public class PersonaDto {
     Integer eta;
     Tessera tesseraIscrizione;
     Trainer trainer;
+    Set<Corso> listaCorsi;
 
     public PersonaDto() {
     }
@@ -34,6 +39,8 @@ public class PersonaDto {
         trainer.setId(entity.getTrainer().getId());
         trainer.setNome(entity.getTrainer().getNome());
         trainer.setCognome(entity.getTrainer().getCognome());
+        this.listaCorsi = new HashSet<>();
+        this.listaCorsi = entity.getListaCorsi();
     }
 
     public Long getId() {
@@ -82,5 +89,13 @@ public class PersonaDto {
 
     public void setTrainer(Trainer trainer) {
         this.trainer = trainer;
+    }
+
+    public Set<Corso> getListaCorsi() {
+        return listaCorsi;
+    }
+
+    public void setListaCorsi(Set<Corso> listaCorsi) {
+        this.listaCorsi = listaCorsi;
     }
 }
