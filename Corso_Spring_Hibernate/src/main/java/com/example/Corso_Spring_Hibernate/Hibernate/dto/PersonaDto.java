@@ -1,6 +1,8 @@
 package com.example.Corso_Spring_Hibernate.Hibernate.dto;
 
 import com.example.Corso_Spring_Hibernate.Hibernate.entity.Persona;
+import com.example.Corso_Spring_Hibernate.Hibernate.entity.Tessera;
+import com.example.Corso_Spring_Hibernate.Hibernate.entity.Trainer;
 
 /**
  * Classe DTO che deriva dall'Entity Persona, ma che nasconde
@@ -13,6 +15,8 @@ public class PersonaDto {
     String nome;
     String cognome;
     Integer eta;
+    Tessera tesseraIscrizione;
+    Trainer trainer;
 
     public PersonaDto() {
     }
@@ -23,6 +27,13 @@ public class PersonaDto {
         this.nome = entity.getNome();
         this.cognome = entity.getCognome();
         this.eta = entity.getEta();
+        this.tesseraIscrizione = new Tessera();
+        tesseraIscrizione.setAttivita(entity.getTesseraIscrizione().getAttivita());
+        tesseraIscrizione.setPromozione(entity.getTesseraIscrizione().getPromozione());
+        this.trainer = new Trainer();
+        trainer.setId(entity.getTrainer().getId());
+        trainer.setNome(entity.getTrainer().getNome());
+        trainer.setCognome(entity.getTrainer().getCognome());
     }
 
     public Long getId() {
@@ -55,5 +66,21 @@ public class PersonaDto {
 
     public void setEta(Integer eta) {
         this.eta = eta;
+    }
+
+    public Tessera getTesseraIscrizione() {
+        return tesseraIscrizione;
+    }
+
+    public void setTesseraIscrizione(Tessera tesseraIscrizione) {
+        this.tesseraIscrizione = tesseraIscrizione;
+    }
+
+    public Trainer getTrainer() {
+        return trainer;
+    }
+
+    public void setTrainer(Trainer trainer) {
+        this.trainer = trainer;
     }
 }
