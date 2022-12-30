@@ -1,6 +1,6 @@
 package com.example.Corso_Spring_Hibernate.scope_annotation;
 
-import com.example.Corso_Spring_Hibernate.dependency_injection.Persona;
+import com.example.Corso_Spring_Hibernate.dependency_injection.Persona1;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,16 +17,16 @@ public class ScopeAnnotation {
      * di inizializzare l'istanza con new,
      * dato che lo fa già Spring dietro le quinte */
     @Autowired
-    Persona p;
+    Persona1 p;
 
     @Autowired
-    Persona p2;
+    Persona1 p2;
 
     @Autowired
-    Persona p3;
+    Persona1 p3;
 
     @RequestMapping("/stampa")
     public void stampa(){
-        System.out.println("numero istanze di Persona : " + Persona.contatore);
+        System.out.println("numero istanze di Persona : " + Persona1.contatore);
     }
 }

@@ -13,7 +13,7 @@ import org.springframework.stereotype.Component;
 /* Quando inizializziamo il progetto, Spring va a vedere tutte le classi
  * con l'annotation @Component, ne crea un bean e lo inserisce nel suo cantainer*/
 @Component
-public class Persona {
+public class Persona1 {
     public String nome;
     public String cognome;
     public static int contatore = 0;
@@ -21,7 +21,7 @@ public class Persona {
     @Autowired
     Indirizzo indirizzo;
 
-    public Persona() {
+    public Persona1() {
         contatore ++;
     }
 }
