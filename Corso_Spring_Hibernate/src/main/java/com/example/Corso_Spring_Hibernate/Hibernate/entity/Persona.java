@@ -50,7 +50,10 @@ public class Persona implements Serializable {
     Tessera tesseraIscrizione;
 
     /* L'annotazione @ManyToOne serve per identificare una relazione
-    * molti a uno tra le tabelle Persona e Trainer.
+    * molti a uno tra le tabelle Persona e Trainer. La relazione
+    * ManyToOne avviene quando viceversa abbiamo una relazione
+    * OneToMany tra la tabella corrente e la seconda tabella (nel nostro
+    * caso tra le tabelle Trainer e Persona abbiamo una relazione OneToMany)
     * Valorizzare l'annotation con cascade = CascadeType.ALL serve per
     * propagare un azione di tipo POST, DELETE o PUT dalla tabella padre
     * (in questo caso Persona) anche alle tabelle figlie */
